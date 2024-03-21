@@ -1,5 +1,5 @@
 {
-  "range": "'スポットデータ'!A1:K84",
+  "range": "'スポットデータ'!A1:K83",
   "majorDimension": "ROWS",
   "values": [
     [
@@ -14,19 +14,6 @@
       "Twitter",
       "公式サイト",
       "Facebook"
-    ],
-    [
-      "2022/05/11 14:46:34",
-      "オフィス",
-      "https://geolonia.github.io/logo/geolonia-logo_b2.jpg",
-      "35.65699958",
-      "139.6985592",
-      "株式会社Geolonia",
-      "株式会社Geoloniaの東京オフィスです",
-      "geolonia",
-      "geoloniamap",
-      "https://geolonia.com",
-      "geolonia"
     ],
     [
       "",
