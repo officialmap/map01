@@ -206,6 +206,7 @@ const Content = (props: Props) => {
 
     } else if (bounds) {
 
+      map.fitBounds(bounds, { padding: 50 })
 
     }
 
@@ -222,8 +223,8 @@ const Content = (props: Props) => {
           precision = Math.ceil((zoom * Math.LN2 + Math.log(512 / 360 / 0.5)) / Math.LN10),
           m = Math.pow(10, precision),
           lng = Math.round(center.lng * m) / m,
-          lat = Math.round(center.lat * m) / m,
-          zStr = Math.ceil(zoom);
+          lat = Math.round(center.lat * m) / m
+        zStr = Math.ceil(zoom);
 
         setZLatLngString(`${zStr}/${lat}/${lng}`);
       });
@@ -251,13 +252,19 @@ const Content = (props: Props) => {
 
   return (
     <div style={CSS}>
-     <div
-  class="geolonia"
-  data-lat="43.062313065965554"
-  data-lng="141.3547865712419"
-  data-zoom="16"
-  style="height:300px;"
-></div>
+      <a href={`#/?${zLatLngString}`} onClick={(e) => {
+        e.preventDefault();
+        const [zoom, lat, lng] = zLatLngString.split('/');
+        mapObject.flyTo({ center: [parseFloat(lng), parseFloat(lat)], zoom: parseFloat(zoom) });
+      }}>
+        <div
+          ref={mapNode}
+          style={CSS}
+          data-geolocate-control="on"
+          data-marker="off"
+          data-gesture-handling="off"
+        ></div>
+      </a>
       {shop ?
         <Shop shop={shop} close={closeHandler} />
         :
