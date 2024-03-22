@@ -198,7 +198,8 @@ const Content = (props: Props) => {
       const latLngString = hash.get('map') || '';
       const zlatlng = latLngString.split('/');
 
-      const zoom = zlatlng[0]
+      const zoom = z
+      latlng[0]
       const lat = zlatlng[1]
       const lng = zlatlng[2]
 
@@ -223,8 +224,8 @@ const Content = (props: Props) => {
           precision = Math.ceil((zoom * Math.LN2 + Math.log(512 / 360 / 0.5)) / Math.LN10),
           m = Math.pow(10, precision),
           lng = Math.round(center.lng * m) / m,
-          lat = Math.round(center.lat * m) / m
-        zStr = Math.ceil(zoom);
+          lat = Math.round(center.lat * m) / m,
+          zStr = Math.ceil(zoom);
 
         setZLatLngString(`${zStr}/${lat}/${lng}`);
       });
@@ -265,6 +266,13 @@ const Content = (props: Props) => {
           data-gesture-handling="off"
         ></div>
       </a>
+      <div
+        class="geolonia"
+        data-lat="43.062313065965554"
+        data-lng="141.3547865712419"
+        data-zoom="16"
+        style={{ height: '300px' }}
+      ></div>
       {shop ?
         <Shop shop={shop} close={closeHandler} />
         :
