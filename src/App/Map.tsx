@@ -267,5 +267,5 @@ const Content = (props: Props) => {
     </div>
   );
 };
-
+<div class="geolonia" data-lat="43.062313065965554" data-lng="141.3547865712419" data-zoom="11.19" data-style="geolonia/basic"></div>
 export default Content;
