@@ -206,7 +206,6 @@ const Content = (props: Props) => {
 
     } else if (bounds) {
 
-      map.fitBounds(bounds, { padding: 50 })
 
     }
 
