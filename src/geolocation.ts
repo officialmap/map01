@@ -7,8 +7,8 @@ export const askGeolocationPermission = () => {
 
     window.navigator.geolocation.getCurrentPosition(
       (pos) => {
-        const lat ="43.06871250322007"
-        const lng ="141.35090839903035"
+        const lat = "43.06871250322007"
+        const lng = "141.35090839903035"
         resolve([lng, lat])
       },
       (error) => {
