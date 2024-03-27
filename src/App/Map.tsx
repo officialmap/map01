@@ -266,13 +266,16 @@ const Content = (props: Props) => {
           data-gesture-handling="off"
         ></div>
       </a>
-      <div
-        class="geolonia"
-        data-lat="43.062313065965554"
-        data-lng="141.3547865712419"
-        data-zoom="16"
-        style={{ height: '300px' }}
-      ></div>
+     <div
+  class="geolonia"
+  data-lat="43.06871250322007"
+  data-lng="141.35090839903035"
+  data-zoom="16"
+  data-max-zoom="20"
+  style="height:300px;"
+></div>
+      
+<script type="text/javascript" src="https://cdn.geolonia.com/v1/embed?geolonia-api-key=YOUR-API-KEY"></script>
       {shop ?
         <Shop shop={shop} close={closeHandler} />
         :
