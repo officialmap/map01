@@ -198,8 +198,7 @@ const Content = (props: Props) => {
       const latLngString = hash.get('map') || '';
       const zlatlng = latLngString.split('/');
 
-      const zoom = z
-      latlng[0]
+      const zoom = zlatlng[0]
       const lat = zlatlng[1]
       const lng = zlatlng[2]
 
@@ -253,29 +252,13 @@ const Content = (props: Props) => {
 
   return (
     <div style={CSS}>
-      <a href={`#/?${zLatLngString}`} onClick={(e) => {
-        e.preventDefault();
-        const [zoom, lat, lng] = zLatLngString.split('/');
-        mapObject.flyTo({ center: [parseFloat(lng), parseFloat(lat)], zoom: parseFloat(zoom) });
-      }}>
-        <div
-          ref={mapNode}
-          style={CSS}
-          data-geolocate-control="on"
-          data-marker="off"
-          data-gesture-handling="off"
-        ></div>
-      </a>
-     <div
-  class="geolonia"
-  data-lat="43.06871250322007"
-  data-lng="141.35090839903035"
-  data-zoom="16"
-  data-max-zoom="20"
-  style="height:300px;"
-></div>
-      
-<script type="text/javascript" src="https://cdn.geolonia.com/v1/embed?geolonia-api-key=YOUR-API-KEY"></script>
+      <div
+        ref={mapNode}
+        style={CSS}
+        data-geolocate-control="on"
+        data-marker="off"
+        data-gesture-handling="off"
+      ></div>
       {shop ?
         <Shop shop={shop} close={closeHandler} />
         :
